@@ -1,20 +1,82 @@
 
-let ToolBar = ({ id, label, value, min, max, setFunction }) => {
+let ToolBar = ({
+    id,
+    title,
+    name,
+    min,
+    max,
+    value,
+    className,
+    onChange }) => {
     return (
-        <div className="sm:py-[16px] py-[8px] w-full">
-            <div className="flex justify-between w-full">
-                <label className="block mb-2 text-slate-400" for={id}>{label}</label>
-                <p className=" text-slate-400">{value}</p>
-            </div>
+        <div className={`${className}`}>
+            <label htmlFor={id}>{title}</label>
             <input
-                className="w-full cursor-pointer rounded-lg appearance-none bg-gray-400 focus:bg-white h-[2px] w-128"
-                name={id}
                 type="range"
+                id={id}
+                name={name}
                 min={min}
                 max={max}
                 value={value}
-                onChange={(event) => { setFunction(event.target.value) }}
+                onChange={onChange}
+                style={{
+                    WebkitAppearance: "none",
+                    appearance: "none",
+                    width: "100%",
+                    height: "10px",
+                    background: "gray",
+                    borderRadius: "5px",
+                    outline: "none",
+                    opacity: "0.7",
+                    transition: "opacity .2s",
+                    cursor: "pointer",
+                }}
             />
+            <style jsx>{`
+        input::-webkit-slider-thumb {
+          WebkitAppearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          background: black;
+          border-radius: 50%;
+          boxShadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          position: relative;
+          top: 0px;
+          transition: transform 0.2s;
+          transform: scale(1.2);
+        }
+
+        input:hover::-webkit-slider-thumb {
+          opacity: 1;
+        }
+
+        input:active::-webkit-slider-thumb {
+          transform: scale(1.5);
+        }
+
+        input::-moz-range-thumb {
+          width: 20px;
+          height: 20px;
+          background: white;
+          borderRadius: 50%;
+          boxShadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          position: relative;
+          top: -5px;
+          transition: transform 0.2s;
+          transform: scale(1.2);
+        }
+
+        input:hover::-moz-range-thumb {
+          opacity: 1;
+        }
+
+        input:active::-moz-range-thumb {
+          transform: scale(1.5);
+        }       
+      `}</style>
         </div>
     )
 }

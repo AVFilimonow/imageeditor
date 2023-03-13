@@ -1,7 +1,7 @@
 
-let Button = ({ func, title, className }) => {
+let Button = ({ clickHandler, title, className }) => {
     return (
-        <button className={`${className} font-regular text-white px-10 py-4 cursor-pointer bg-transparent border-[1px] border-[#4D4D4F] hover:bg-[#4D4D4F] focus:bg-[#b9b8b8] transition ease-in-out delay-150`} onClick={func}>
+        <button className={`${className} font-bold uppercase text-white px-10 py-2 cursor-pointer rounded-[12px] bg-[#D08884] hover:bg-[#AC6A66] transition delay-50`} onClick={clickHandler}>
             {title}
         </button>
     )

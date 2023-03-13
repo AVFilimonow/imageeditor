@@ -1,38 +1,38 @@
 
 let ToolBar = ({
-    id,
-    title,
-    name,
-    min,
-    max,
-    value,
-    className,
-    onChange }) => {
-    return (
-        <div className={`${className}`}>
-            <label htmlFor={id}>{title}</label>
-            <input
-                type="range"
-                id={id}
-                name={name}
-                min={min}
-                max={max}
-                value={value}
-                onChange={onChange}
-                style={{
-                    WebkitAppearance: "none",
-                    appearance: "none",
-                    width: "100%",
-                    height: "10px",
-                    background: "gray",
-                    borderRadius: "5px",
-                    outline: "none",
-                    opacity: "0.7",
-                    transition: "opacity .2s",
-                    cursor: "pointer",
-                }}
-            />
-            <style jsx>{`
+  id,
+  title,
+  name,
+  min,
+  max,
+  value,
+  className,
+  onChange }) => {
+  return (
+    <div className={`${className} mb-4`}>
+      <label htmlFor={id}>{title}</label>
+      <input
+        type="range"
+        id={id}
+        name={name}
+        min={min}
+        max={max}
+        value={value}
+        onChange={onChange}
+        style={{
+          WebkitAppearance: "none",
+          appearance: "none",
+          width: "100%",
+          height: "2px",
+          background: "gray",
+          borderRadius: "5px",
+          outline: "none",
+          opacity: "0.7",
+          transition: "opacity .2s",
+          cursor: "pointer",
+        }}
+      />
+      <style jsx>{`
         input::-webkit-slider-thumb {
           WebkitAppearance: none;
           appearance: none;
@@ -59,8 +59,8 @@ let ToolBar = ({
         input::-moz-range-thumb {
           width: 20px;
           height: 20px;
-          background: white;
-          borderRadius: 50%;
+          background: black;
+          border-radius: 50%;
           boxShadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
           cursor: pointer;
           position: relative;
@@ -77,8 +77,8 @@ let ToolBar = ({
           transform: scale(1.5);
         }       
       `}</style>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default ToolBar

@@ -1,7 +1,7 @@
 
-let AddImageIcon = ({ func, className }) => {
+let AddImageIcon = ({ clickHandler, className }) => {
     return (
-        <button onClick={func} className={`cursor:pointer ${className}`}>
+        <button onClick={clickHandler} className={`cursor:pointer ${className}`}>
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM24 2C36.1503 2 46 11.8497 46 24C46 36.1503 36.1503 46 24 46C11.8497 46 2 36.1503 2 24C2 11.8497 11.8497 2 24 2Z" fill="#6E6F71" />
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M24 16C24.5128 16 24.9355 16.386 24.9933 16.8834L25 17V31C25 31.5523 24.5523 32 24 32C23.4872 32 23.0645 31.614 23.0067 31.1166L23 31V17C23 16.4477 23.4477 16 24 16Z" fill="#6E6F71" />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const useImageEditor = () => {
     const [image, setImage] = useState(null);
+    const [filename, setFilename] = useState("");
     const [filterValues, setFilterValues] = useState({
         brightness: 100,
         contrast: 100,
@@ -19,6 +20,7 @@ const useImageEditor = () => {
         reader.readAsDataURL(file);
         reader.onload = (event) => {
             setImage(event.target.result);
+            setFilename(file.name);
         };
     };
 
@@ -70,6 +72,19 @@ const useImageEditor = () => {
         };
     };
 
+    String.prototype.hashCode = function () {
+        let hash = 0;
+        if (this.length == 0) {
+            return hash;
+        }
+        for (let i = 0; i < this.length; i++) {
+            let char = this.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit integer
+        }
+        return Math.abs(hash);
+    };
+
     const handleDownloadImage = () => {
         const canvas = document.createElement("canvas");
         const imageElement = document.createElement("img");
@@ -80,8 +95,15 @@ const useImageEditor = () => {
             const ctx = canvas.getContext("2d");
             ctx.filter = applyFilters().filter;
             ctx.drawImage(imageElement, 0, 0);
+
+            // Get a hash code based on the used filters
+            const hash = Object.values(filterValues).join("-").hashCode();
+
+            // Combine the filename and hash code to create the new filename
+            const newFilename = `${filename.split(".")[0]}-filtered-${hash}.png`;
+
             const link = document.createElement("a");
-            link.download = "filtered-image.png";
+            link.download = newFilename;
             link.href = canvas.toDataURL();
             document.body.appendChild(link);
             link.click();

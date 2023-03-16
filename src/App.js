@@ -1,10 +1,11 @@
 import React from "react";
 import ImageEditor from "./components/ImageEditor";
+import "./styles/global.css";
 
 function App() {
 
   return (
-    <div className="bg-[#F5F5F5]">
+    <div className="bg-primary">
       <ImageEditor />
     </div>
 

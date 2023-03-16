@@ -1,3 +1,13 @@
+@import "variables.css";
+
 .container {
-    @apply max-w-[700px] px-4;
+    @apply max-w-[1600px] bg-primary;
+}
+
+.section {
+    @apply md:px-12 sm:px-8 px-4;
+}
+
+.btn {
+    @apply text-p1 font-bold uppercase text-white px-10 py-4 cursor-pointer rounded-[12px] bg-secondary hover:bg-secondary-dark transition;
 }

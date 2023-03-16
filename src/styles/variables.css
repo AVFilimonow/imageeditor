@@ -1,0 +1,54 @@
+:root {
+    --tw-bg-opacity: 1;
+
+    --color-transparent: transparent;
+    --color-current: currentColor;
+
+    --color-primary-dark: rgb(163, 163, 163, 1);
+    --color-primary: rgb(245, 245, 245, 1);
+    --color-primary-light: rgb(250, 250, 250, 1);
+    
+    --color-secondary-dark: rgb(172, 106, 102, 1);
+    --color-secondary: rgb(208, 136, 132, 1);
+    --color-secondary-light: rgb(239, 194, 183, 1);   
+   
+
+    --font-h1-size: 24px;
+    --font-h1-height: 30px;
+    --font-h2-size: 20px;
+    --font-h2-height: 24px;
+       
+    --font-p1-size: 16px;
+    --font-p1-height: 20px;
+    --font-p2-size: 14px;
+    --font-p2-height: 16px;       
+    
+}
+
+@screen sm {
+    :root {
+        --font-h1-size: 28px;
+        --font-h1-height: 36px;
+        --font-h2-size: 24px;
+        --font-h2-height: 28px;
+       
+        --font-p1-size: 18px;
+        --font-p1-height: 20px;
+        --font-p2-size: 14px;
+        --font-p2-height: 16px;           
+    }
+}
+
+@screen md {
+    :root {
+        --font-h1-size: 32px;
+        --font-h1-height: 40px;
+        --font-h2-size: 28px;
+        --font-h2-height: 32px;
+       
+        --font-p1-size: 18px;
+        --font-p1-height: 20px;
+        --font-p2-size: 16px;
+        --font-p2-height: 18px;        
+    }
+}

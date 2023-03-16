@@ -1,20 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+const { fonts, colors } = require("./theme");
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./pages/**/*.jsx", "./src/**/*.jsx"],
+  darkMode: "class",
   theme: {
-    screens: {
-      'sm': '576px',
-      // => @media (min-width: 576px) { ... }
-
-      'md': '1100px',
-      // => @media (min-width: 960px) { ... }
-
-      'lg': '1640px',
-      // => @media (min-width: 1440px) { ... }
+    extend: {
+      colors: colors,
+      fontSize: fonts,
     },
-    extend: {},
+
+    screens: {
+      sm: "576px",
+      md: "1100px",
+      lg: "1640px",
+      xl: "2440px",
+    },
   },
-  plugins: [],
-}
+};

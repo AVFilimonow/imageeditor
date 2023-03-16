@@ -18,7 +18,6 @@ const ImageEditor = () => {
         handleDownloadImage,
     } = useImageEditor();
 
-
     const inputRef = useRef(null);
 
     const handleClick = () => {
@@ -38,12 +37,11 @@ const ImageEditor = () => {
         }
     };
 
-
     return (
         <>
-            <div className="min-h-screen bg-[#F5F5F5] max-w-[1600px] md:px-[54px] sm:px-[32px] px-[16px] mx-auto">
+            <div className="min-h-screen bg-primary container section mx-auto">
                 <div className="flex md:flex-row flex-col md:justify-between justify-start min-h-screen items-center">
-                    <div className="md:w-[25%] w-full max-w-[600px] md:max-w-[800px] md:p-4 p-0">
+                    <div className="md:w-[40%] w-full max-w-[600px] md:max-w-[800px] md:p-4 p-0">
                         <div className="mb-4 hidden md:block">
                             <input
                                 type="file"
@@ -150,7 +148,6 @@ const ImageEditor = () => {
                     </div>
 
                 </div>
-
 
             </div >
             <div className="md:hidden mt-8 bg-[#141414] opacity-70 w-full">

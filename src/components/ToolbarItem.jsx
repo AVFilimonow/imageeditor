@@ -10,7 +10,9 @@ let ToolBar = ({
   onChange }) => {
   return (
     <div className={`${className} mb-4`}>
-      <label htmlFor={id}>{title}</label>
+      <label
+        htmlFor={id}
+        className="text-p2">{title}</label>
       <input
         type="range"
         id={id}

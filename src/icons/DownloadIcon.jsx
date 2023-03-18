@@ -2,7 +2,7 @@
 let DownloadIcon = ({ clickHandler, className }) => {
     return (
         <button onClick={clickHandler} className={`cursor:pointer ${className}`}>
-            <svg width="60px" height="60px" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="45" height="45" viewBox="6 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                 <path d="M11.335 13.315l-0.754 0.754 5.419 5.419 5.419-5.419-0.754-0.754-4.132 4.132v-16.877h-1.066v16.877z" fill="#6E6F71">
 

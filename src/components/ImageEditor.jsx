@@ -4,7 +4,6 @@ import ToolBar from './ToolbarItem'
 import Button from './Button'
 import AddImageIcon from '../icons/AddImgIcon'
 import DownloadIcon from '../icons/DownloadIcon'
-import AddCamShotIcon from '../icons/AddCamShotIcon'
 import ResetFiltersIcon from '../icons/ResetFiltersIcon'
 
 const ImageEditor = () => {
@@ -24,25 +23,12 @@ const ImageEditor = () => {
         inputRef.current.click();
     };
 
-    const handleCamShot = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            const videoTrack = stream.getVideoTracks()[0];
-            const imageCapture = new ImageCapture(videoTrack);
-            const blob = await imageCapture.takePhoto();
-            handleFileInputChange({ target: { files: [blob] } });
-            stream.getTracks().forEach(track => track.stop());
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
     return (
         <>
             <div className="min-h-screen bg-primary container section mx-auto">
                 <div className="flex md:flex-row flex-col md:justify-between justify-start min-h-screen items-center">
                     <div className="md:w-[40%] w-full max-w-[600px] md:max-w-[800px] md:p-4 p-0">
-                        <div className="mb-4 hidden md:block">
+                        <div className="mb-6 hidden md:block">
                             <input
                                 type="file"
                                 id="file-input"
@@ -126,7 +112,7 @@ const ImageEditor = () => {
                             onChange={handleFilterChange}
                         />
                         {image && (
-                            <div className="hidden md:flex flex-col mt-8">
+                            <div className="hidden md:flex flex-col mt-10">
                                 <Button className="mb-4" clickHandler={handleResetFilters} title="Reset Filters" />
                                 <Button clickHandler={handleDownloadImage} title="Download Image" />
                             </div>
@@ -151,9 +137,8 @@ const ImageEditor = () => {
 
             </div >
             <div className="md:hidden mt-8 bg-[#141414] opacity-70 w-full">
-                <div className="flex justify-between py-2 px-4 max-w-[600px] mx-auto">
+                <div className="flex justify-between items-center py-2 px-4 max-w-[600px] mx-auto">
                     <AddImageIcon clickHandler={handleClick} />
-                    <AddCamShotIcon clickHandler={handleCamShot} />
                     <DownloadIcon clickHandler={handleDownloadImage} />
                     <ResetFiltersIcon clickHandler={handleResetFilters} />
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useImageEditor = () => {
     const [image, setImage] = useState(null);
@@ -74,7 +74,7 @@ const useImageEditor = () => {
 
     String.prototype.hashCode = function () {
         let hash = 0;
-        if (this.length == 0) {
+        if (this.length === 0) {
             return hash;
         }
         for (let i = 0; i < this.length; i++) {
@@ -96,20 +96,26 @@ const useImageEditor = () => {
             ctx.filter = applyFilters().filter;
             ctx.drawImage(imageElement, 0, 0);
 
+            const dataUrl = canvas.toDataURL("image/png");
+
             // Get a hash code based on the used filters
             const hash = Object.values(filterValues).join("-").hashCode();
 
             // Combine the filename and hash code to create the new filename
             const newFilename = `${filename.split(".")[0]}-filtered-${hash}.png`;
 
-            const link = document.createElement("a");
-            link.download = newFilename;
-            link.href = canvas.toDataURL();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Create a link with the data URL as its href and trigger a click to download the image
+            const a = document.createElement("a");
+            a.style.display = "none";
+            a.href = dataUrl;
+            a.download = newFilename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         };
     };
+
+
 
     return {
         image,
@@ -123,4 +129,3 @@ const useImageEditor = () => {
 };
 
 export default useImageEditor
-

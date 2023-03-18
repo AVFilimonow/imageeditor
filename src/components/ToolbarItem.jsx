@@ -14,6 +14,7 @@ let ToolBar = ({
         htmlFor={id}
         className="text-p2">{title}</label>
       <input
+        className="mt-[24px]"
         type="range"
         id={id}
         name={name}

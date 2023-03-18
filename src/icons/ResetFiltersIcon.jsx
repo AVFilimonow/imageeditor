@@ -2,7 +2,7 @@
 let ResetFiltersIcon = ({ clickHandler, className }) => {
     return (
         <button onClick={clickHandler} className={`cursor:pointer ${className}`}>
-            <svg width="60px" height="60px" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+            <svg width="35" height="35" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
 
                 <g fill="none" fill-rule="evenodd" stroke="#6E6F71" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0 1 1 0 2.5 2.5)">
 

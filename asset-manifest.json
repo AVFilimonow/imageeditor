@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/imageeditor/static/css/main.fbed2485.css",
+    "main.js": "/imageeditor/static/js/main.fa02781f.js",
+    "index.html": "/imageeditor/index.html",
+    "main.fbed2485.css.map": "/imageeditor/static/css/main.fbed2485.css.map",
+    "main.fa02781f.js.map": "/imageeditor/static/js/main.fa02781f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbed2485.css",
+    "static/js/main.fa02781f.js"
+  ]
+}
